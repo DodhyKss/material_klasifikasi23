@@ -1,0 +1,300 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f4f4f4;
+    overflow: hidden; /* Sembunyikan scroll bar default */
+}
+
+/* Membuat scrollable container tetap bisa digulir */
+.container {
+    text-align: center;
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 120px; /* Increase margin-bottom to provide enough space for the bottom navbar */
+    overflow-y: scroll; /* Memungkinkan scrolling pada konten */
+    -webkit-overflow-scrolling: touch; /* Menambahkan smooth scroll pada perangkat mobile */
+}
+
+/* Menyembunyikan scrollbar pada semua browser berbasis WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 0px; /* Menyembunyikan scrollbar */
+    background: transparent; /* Tidak memberikan background */
+}
+
+/* Untuk Firefox */
+body {
+    scrollbar-width: none; /* Menyembunyikan scrollbar di Firefox */
+}
+
+.container {
+    scrollbar-width: thin; /* Tetap menjaga scrollbar agar tipis jika dibutuhkan */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#webcam-container {
+    margin-bottom: 20px;
+    margin: auto;
+    margin-top: 300px;
+    height: auto;
+    width: 50%; /* Set the width to 80% of the container */
+    border-radius: 15px; /* Add border radius to the container */
+    overflow: hidden; /* Hide any overflow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow to make it look more elegant */
+}
+
+/* Ensure the canvas inside webcam container maintains proper styling */
+#webcam-container canvas {
+    width: 50%; /* Set the width of the canvas to fill the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Add border radius to the canvas */
+}
+
+#label-container {
+    margin-top: 20px;
+}
+
+#description-container {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+}
+
+#description-container ul li {
+    list-style: none;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background-color: #78B3CE;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #F96E2A;
+}
+
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+/* Adjusting position and ensuring it doesn't go beyond screen */
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust this value based on navbar height */
+    left: 0;
+    background-color: #F96E2A;
+    text-align: center;
+    padding-top: 20px;
+    box-sizing: border-box; /* Prevent overflow */
+    max-height: 90vh; /* Ensure the menu doesn't go beyond the screen */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.nav-links li {
+    padding: 12px;
+    border-bottom: 1px solid #F96E2A;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin-top: 70px; /* Give space for navbar */
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    #webcam-container {
+        margin-top: 20px;
+        width: 80%; /* Make webcam container slightly smaller on mobile */
+        height: auto;
+    }
+
+    #label-container {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    #description-container {
+        font-size: 16px;
+        width: 100%;
+        text-align: justify;
+    }
+
+    #description-container ul li {
+        list-style: none;
+    }
+
+    #description-container .judul {
+        background-color: #F96E2A;
+        padding: 5px;
+        color: white;
+        border-radius: 6px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Ensure the canvas inside webcam container maintains proper styling */
+    #webcam-container canvas {
+        width: 100%; /* Set the width of the canvas to fill the container */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 15px; /* Add border radius to the canvas */
+    }
+}
+
+/* Larger Screens */
+@media (min-width: 601px) {
+    .menu-icon {
+        display: none;
+    }
+}
+
+/* Bottom Navbar Styles */
+.bottom-navbar {
+    width: 100%;
+    background-color: #78B3CE;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0; /* Reduce the padding to make it less bulky */
+    box-sizing: border-box; /* Prevent overflow */
+    z-index: 1000;
+}
+
+.bottom-navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#take-snapshot-btn {
+    background-color: #57b85c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 35px;
+    transition: background-color 0.3s ease;
+}
+
+#take-snapshot-btn:hover {
+    background-color: #45a049;
+}
+
+.camera-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .menu-icon {
+        display: block; /* Menampilkan icon hamburger pada layar kecil */
+    }
+
+    .nav-links {
+        display: none; /* Menyembunyikan menu pada layar kecil */
+        flex-direction: column;
+        align-items: left;
+        margin-top: 0px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Menampilkan menu saat active */
+    }
+    
+}

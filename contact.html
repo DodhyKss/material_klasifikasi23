@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Material Detection</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #78B3CE;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: #F96E2A;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* About Page Styles */
+.about-container {
+    padding: 100px 20px 20px; /* Add padding to the top for navbar */
+    text-align: center;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    margin-top: 40px;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #78B3CE;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">Material Detection</div>
+                <div class="menu-icon" onclick="toggleMenu()">
+                    &#9776; <!-- Hamburger icon -->
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/index.html">Scan</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="about-container">
+        <div class="about-content">
+            <h1>Contact Material Detection</h1>
+           
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Material Detection. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+</html>
